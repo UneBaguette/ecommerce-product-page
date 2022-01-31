@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>E-commerce product page</title>
+</head>
+<body>
+  <header>
+    <div>
+      <img class="logo" alt="Logo Sneakers" src="images/logo.svg">
+      <!-- Navbar et boutons de navigations -->
+      <ul class="menu">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="cart">
+        <img src="images/icon-cart.svg" alt="shopping-cart">
+      </div>
+      <div class="user">
+        <img src="images/image-avatar.png" alt="User Profile Picture">
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="gallery">
+      <img class="main" src="images/image-product-1.jpg" alt="sneakers" width="300">
+      <div class="thumbnail">
+        <img src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
+        <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
+        <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
+        <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
+      </div>
+    </div>
+    <div class="shop">
+      <h3 class="seller"><a href="#">Sneaker Company</a></h3>
+      <div class="desc">
+        <h2 class="title">Fall Limited Edition Sneakers</h2>
+        <p>
+          These low-profile sneakers are your perfect casual wear companion. Featuring a 
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+      </div>
+      <div class="price">
+        <div class="offerprice">
+          <p class="offer-price">$125.00</p>
+          <p class="offer">50%</p>
+        </div>
+        <p class="real-price">$250.00</p>
+      </div>
+      <div class="buy">
+        <div class="number">
+          <img src="images/icon-minus.svg" alt="minus">
+          <span>0</span>
+          <img src="images/icon-plus.svg" alt="plus">
+        </div>
+        <div class="add-cart">
+          <img src="images/icon-cart.svg" alt="shopping-cart">
+          <span>Add to cart</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
