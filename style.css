@@ -68,6 +68,7 @@ ul li a:hover{
 
 .cart {
     cursor: pointer;
+    margin: auto 40px;
 }
 
 .cart img:hover{
@@ -76,7 +77,6 @@ ul li a:hover{
 
 .user{
     cursor: pointer;
-    padding: 0px 0px 0px 40px;
 }
 
 .user img {
@@ -141,6 +141,10 @@ main {
 
 .thumbnail img:hover{
     opacity: 60%;
+}
+
+.active-1{
+    outline: 2px solid #ff7d1a;
 }
 
 .active{
@@ -307,8 +311,8 @@ main {
     header {
         padding: 20px 0px;
     }
-    .user {
-        padding: 0px 10px;
+    .cart{
+        margin: auto 20px;
     }
     .user img {
         width: 24px;
@@ -416,7 +420,7 @@ main {
         position: fixed;
         z-index: 2;
         overflow: hidden;
-        transform: translateX(100%);
+        transform: translateX(110%);
         transition: transform 0.5s ease-in;
     }
 
