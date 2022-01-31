@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,10 @@
 <body>
   <header>
     <div>
+      <!-- creation du button burger -->
+      <div class="btn-burger">
+        <img src="images/icon-menu.svg" alt="Menu">
+      </div>
       <img class="logo" alt="Logo Sneakers" src="images/logo.svg">
       <!-- Navbar et boutons de navigations -->
       <ul class="menu">
@@ -28,15 +32,44 @@
         <img src="images/image-avatar.png" alt="User Profile Picture">
       </div>
     </div>
+    <!-- creation du bouton burger -->
+    <div class="mobile-nav">
+      <ul class="mobile-ul">
+        <li><a href="#">Collections</a></li>
+        <li><a href="#">Men</a></li>
+        <li><a href="#">Women</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+  </div>
   </header>
   <main>
     <div class="gallery">
-      <img class="main" src="images/image-product-1.jpg" alt="sneakers" width="300">
+      <div class="desktop">
+        <img class="main-img active" src="images/image-product-1.jpg" alt="sneakers" width="300">
+        <img class="main-img" src="images/image-product-2.jpg" alt="sneakers" width="300">
+        <img class="main-img" src="images/image-product-3.jpg" alt="sneakers" width="300">
+        <img class="main-img" src="images/image-product-4.jpg" alt="sneakers" width="300">
+      </div>
+      <div class="mobile">
+        <img class="main-img-mobile active" src="images/image-product-1.jpg" alt="sneakers">
+        <img class="main-img-mobile" src="images/image-product-2.jpg" alt="sneakers">
+        <img class="main-img-mobile" src="images/image-product-3.jpg" alt="sneakers">
+        <img class="main-img-mobile" src="images/image-product-4.jpg" alt="sneakers">
+      </div>
       <div class="thumbnail">
         <img src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
         <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
         <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
         <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
+      </div>
+      <div class="arrows">
+        <div class="left">
+          <img src="images/icon-previous.svg" alt="Previous Arrow">
+        </div>
+        <div class="right">
+          <img src="images/icon-next.svg" alt="Next Arrow">
+        </div>
       </div>
     </div>
     <div class="shop">
@@ -53,17 +86,19 @@
           <p class="offer-price">$125.00</p>
           <p class="offer">50%</p>
         </div>
-        <p class="real-price">$250.00</p>
+        <div>
+          <p class="real-price">$250.00</p>
+        </div>
       </div>
       <div class="buy">
         <div class="number">
-          <img src="images/icon-minus.svg" alt="minus">
+          <img data-op="-" src="images/icon-minus.svg" alt="minus">
           <span>0</span>
-          <img src="images/icon-plus.svg" alt="plus">
+          <img data-op="+" src="images/icon-plus.svg" alt="plus">
         </div>
         <div class="add-cart">
           <img src="images/icon-cart.svg" alt="shopping-cart">
-          <span>Add to cart</span>
+          <p>Add to cart</p>
         </div>
       </div>
     </div>
