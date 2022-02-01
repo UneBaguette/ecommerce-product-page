@@ -10,7 +10,7 @@
 <body>
   <header>
     <div>
-      <!-- creation du button burger -->
+      <!-- creation du logo button burger -->
       <div class="btn-burger">
         <img src="images/icon-menu.svg" alt="Menu">
       </div>
@@ -27,29 +27,87 @@
     <div>
       <div class="cart">
         <img src="images/icon-cart.svg" alt="shopping-cart">
+        <div class="cart-number">
+          <span>1</span>
+        </div>
       </div>
       <div class="user">
         <img src="images/image-avatar.png" alt="User Profile Picture">
       </div>
     </div>
     <!-- creation du bouton burger -->
+    <!-- <section class="overlay-mobile"> -->
     <div class="mobile-nav">
-      <ul class="mobile-ul">
-        <li><a href="#">Collections</a></li>
-        <li><a href="#">Men</a></li>
-        <li><a href="#">Women</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-  </div>
+      <div class="overlay-mobile">
+      <div class="btn-burger2">
+        <div>
+          <img src="images/icon-close.svg" alt="Close-Menu">
+        </div>
+      </div>
+      <div>
+        <ul class="mobile-ul">
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Men</a></li>
+          <li><a href="#">Women</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  <!-- </section> -->
   </header>
   <main>
+    <div class="shopping" id="shopping">
+      <div class="cart-title">
+        <h4>Cart</h4>
+      </div>
+      <div class="shop-items">
+        <div class="items">
+        </div>
+      </div>
+      <div class="placeholder">
+          <p>Your cart is empty.</p>
+      </div>
+    </div>
     <div class="gallery">
       <div class="desktop">
-        <img class="main-img active" src="images/image-product-1.jpg" alt="sneakers" width="300">
-        <img class="main-img" src="images/image-product-2.jpg" alt="sneakers" width="300">
-        <img class="main-img" src="images/image-product-3.jpg" alt="sneakers" width="300">
-        <img class="main-img" src="images/image-product-4.jpg" alt="sneakers" width="300">
+        <div>
+          <img class="main-img active" src="images/image-product-1.jpg" alt="sneakers" width="300">
+          <img class="main-img" src="images/image-product-2.jpg" alt="sneakers" width="300">
+          <img class="main-img" src="images/image-product-3.jpg" alt="sneakers" width="300">
+          <img class="main-img" src="images/image-product-4.jpg" alt="sneakers" width="300">
+        </div>
+        <div class="lightbox" id="lb">
+          <div class="gallery-lb">
+            <img class="lb-img" src="images/image-product-1.jpg" alt="sneakers" width="400">
+          </div>
+          <div class="close-btn">
+            <img src="images/icon-close.svg" alt="Close button">
+          </div>
+          <div class="arrows-lb">
+            <div class="left-lb">
+              <img src="images/icon-previous.svg" alt="Previous Arrow">
+            </div>
+            <div class="right-lb">
+              <img src="images/icon-next.svg" alt="Next Arrow">
+            </div>
+          </div>
+          <div class="thumbnail-lb">
+            <div class="over">
+              <img src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
+            </div>
+            <div class="over">
+              <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
+            </div>
+            <div class="over">
+              <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
+            </div>
+            <div class="over">
+              <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
+            </div>
+          </div>
+        </div>
       </div>
       <div class="mobile">
         <img class="main-img-mobile active" src="images/image-product-1.jpg" alt="sneakers">
