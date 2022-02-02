@@ -24,6 +24,7 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </div>
+    <div class="ov"></div>
     <div>
       <div class="cart">
         <img src="images/icon-cart.svg" alt="shopping-cart">
@@ -36,26 +37,24 @@
       </div>
     </div>
     <!-- creation du bouton burger -->
-    <!-- <section class="overlay-mobile"> -->
     <div class="mobile-nav">
       <div class="overlay-mobile">
-      <div class="btn-burger2">
+        <div class="btn-burger2">
+          <div>
+            <img src="images/icon-close.svg" alt="Close-Menu">
+          </div>
+        </div>
         <div>
-          <img src="images/icon-close.svg" alt="Close-Menu">
+          <ul class="mobile-ul">
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
       </div>
-      <div>
-        <ul class="mobile-ul">
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Men</a></li>
-          <li><a href="#">Women</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
     </div>
-    </div>
-  <!-- </section> -->
   </header>
   <main>
     <div class="shopping" id="shopping">
@@ -64,6 +63,33 @@
       </div>
       <div class="shop-items">
         <div class="items">
+          <div class="thumbnail-cart">
+            <img src="images/image-product-1-thumbnail.jpg" alt="Sneakers frist image" width="60">
+          </div>
+          <div class="elements">
+            <div class="shop-item">
+              <div class="title-item">
+                <h4>Fall Limited Edition Sneakers</h4>
+              </div>
+              <div class="prices">
+                <div class="price-item">
+                  <p>$125.00 x</p>
+                </div>
+                <div class="num-item">
+                  <span>1</span>
+                </div>
+                <div class="total">
+                  <p>$125.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="trash">
+              <img src="images/icon-delete.svg" alt="Trash button">
+            </div>
+          </div>
+        </div>
+        <div class="checkout">
+          <h4>Checkout</h4>
         </div>
       </div>
       <div class="placeholder">
@@ -79,11 +105,14 @@
           <img class="main-img" src="images/image-product-4.jpg" alt="sneakers" width="300">
         </div>
         <div class="lightbox" id="lb">
-          <div class="gallery-lb">
-            <img class="lb-img" src="images/image-product-1.jpg" alt="sneakers" width="400">
-          </div>
           <div class="close-btn">
             <img src="images/icon-close.svg" alt="Close button">
+          </div>
+          <div class="gallery-lb">
+            <img class="lb-img active" src="images/image-product-1.jpg" alt="sneakers" width="400">
+            <img class="lb-img" src="images/image-product-2.jpg" alt="sneakers" width="400">
+            <img class="lb-img" src="images/image-product-3.jpg" alt="sneakers" width="400">
+            <img class="lb-img" src="images/image-product-4.jpg" alt="sneakers" width="400">
           </div>
           <div class="arrows-lb">
             <div class="left-lb">
@@ -94,18 +123,10 @@
             </div>
           </div>
           <div class="thumbnail-lb">
-            <div class="over">
-              <img src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
-            </div>
-            <div class="over">
-              <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
-            </div>
-            <div class="over">
-              <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
-            </div>
-            <div class="over">
-              <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
-            </div>
+                <img class="active-1" src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
+                <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
+                <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
+                <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
           </div>
         </div>
       </div>
@@ -115,11 +136,12 @@
         <img class="main-img-mobile" src="images/image-product-3.jpg" alt="sneakers">
         <img class="main-img-mobile" src="images/image-product-4.jpg" alt="sneakers">
       </div>
+      <!-- class="active-1" -->
       <div class="thumbnail">
-        <img src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail">
-        <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail">
-        <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail">
-        <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail">
+        <img class="active-1" src="images/image-product-1-thumbnail.jpg" alt="product-thumbnail" data-ac="1">
+        <img src="images/image-product-2-thumbnail.jpg" alt="product-thumbnail" data-ac="2">
+        <img src="images/image-product-3-thumbnail.jpg" alt="product-thumbnail" data-ac="3">
+        <img src="images/image-product-4-thumbnail.jpg" alt="product-thumbnail" data-ac="4">
       </div>
       <div class="arrows">
         <div class="left">

@@ -72,6 +72,10 @@ ul li a:hover{
     margin: auto 40px;
 }
 
+.cart img{
+    user-select: none;
+}
+
 .cart img:hover{
     filter: brightness(30%);
 }
@@ -124,6 +128,8 @@ main {
     width: 90%;
 }
 
+/* Shopping cart */
+
 .shopping{
     position: absolute;
     z-index: 2;
@@ -155,9 +161,115 @@ main {
     height: 170px;
 }
 .placeholder p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-weight: 700;
     opacity: 60%;
 }
+
+.shop-items{
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 170px;
+    margin: 0px 0px 10px 0px;
+}
+
+.shop-item{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 180px;
+}
+
+.thumbnail-cart img{
+    width: 45px;
+    border-radius: 5px;
+}
+
+.items{
+    display: flex;
+    width: 85%;
+}
+
+.elements{
+    display: flex;
+    margin: auto 10px;
+}
+
+.title-item h4{
+    font-weight: 400;
+    color: #1d20259d;
+    font-size: 14px;
+    overflow: hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 3px;
+    /* white-space: nowrap;
+    text-overflow: ellipsis; */
+}
+
+.price-item{
+    color: #1d20259d;
+    font-size: 15px;
+}
+
+.num-item{
+    color: #1d20259d;
+    font-size: 15px;
+    margin: auto 5px;
+}
+
+.total p{
+    font-weight: 700;
+    color: #1d2025;
+    font-size: 15px;
+}
+
+.prices{
+    display: flex;
+    align-items: center;
+    padding-bottom: 4px;
+}
+
+
+.trash{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto 10px;
+}
+
+.trash:hover{
+    filter: brightness(30%);
+}
+
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ff7d1a;
+    padding: 15px 50px 15px 50px;
+    border-radius: 10px;
+    width: 85%;
+    cursor: pointer;
+}
+
+.checkout:hover{
+    opacity: 60%;
+}
+
+.checkout h4{
+    user-select: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+
+
 
 /* Gallery (IMGS) */
 
@@ -194,10 +306,13 @@ main {
 }
 
 .lb-img{
-    width: 40%;
+    display: none;
+    width: 450px;
+    position: relative;
 }
 
 .gallery-lb{
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -207,7 +322,8 @@ main {
     position: absolute;
     justify-content: space-between;
     display: flex;
-    width: 50%
+    width: 510px;
+    height: 110px;
 }
 
 .left-lb{
@@ -234,34 +350,57 @@ main {
     height: 50px;
 }
 
-.close-btn{
-    position: absolute;
-    top:50px;
-    right: 300px;
+.right-lb img{
+    user-select: none;
 }
 
-.close-btn:hover {
+.left-lb img{
+    user-select: none;
+}
+
+.right-lb:hover img{
+    filter: invert(63%) sepia(40%) saturate(4874%) hue-rotate(347deg) brightness(100%) contrast(101%);
+}
+.left-lb:hover img{
+    filter: invert(63%) sepia(40%) saturate(4874%) hue-rotate(347deg) brightness(100%) contrast(101%);
+}
+
+.close-btn{
+    justify-content: end;
+    display: flex;
+    width: 460px;
+    z-index: 10;
+    user-select: none;
+    top:25px;
+    right: 300px;
+    filter:brightness(300%);
+}
+
+.close-btn img{
+    width: 20px;
+}
+
+.close-btn:hover { 
+    filter: invert(63%) sepia(40%) saturate(4874%) hue-rotate(347deg) brightness(100%) contrast(101%);
     cursor: pointer;
 }
 
 .thumbnail-lb {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .thumbnail-lb img{
+    position: relative;
     cursor: pointer;
     width: 70px;
-}
-.over {
-    background-color: #fff;
-    border-radius: 10px;
 }
 
 .thumbnail-lb img:hover{
     opacity: 60%;
-
+    filter: hue-rotate(3deg) brightness(110%);
 }
 
 .thumbnail {
@@ -272,7 +411,7 @@ main {
 
 .thumbnail img {
     cursor: pointer;
-    width: 70px;
+    width: 80px;
 }
 
 .thumbnail img:hover{
@@ -280,7 +419,12 @@ main {
 }
 
 .active-1{
-    outline: 2px solid #ff7d1a;
+    opacity: 30%;
+    border: 2px solid #ff7d1a;
+}
+
+.active-cart{
+    filter: brightness(30%);
 }
 
 .active-lb {
@@ -461,6 +605,7 @@ main {
         margin-top:1.4%;
     }
     header {
+        z-index: 1;
         padding: 20px 0px;
     }
     header div {
@@ -480,9 +625,6 @@ main {
         object-fit: cover;
         width: 100%;
     }
-    .active{
-        display: inline-block;
-    }
     .arrows{
         display: flex;
         position:absolute;
@@ -494,6 +636,7 @@ main {
         padding: 0px 15px;
     }
     .right{
+        user-select: none;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -505,6 +648,7 @@ main {
         height: 40px;
     }
     .left{
+        user-select: none;
         cursor: pointer;
         display: flex;
         justify-content: center;
@@ -570,12 +714,11 @@ main {
     .mobile-nav {
         display: flex;
         flex-direction: column;
-        background-color: #000000BF;
         width:110%;
         height: 100%;
         top: 0%;
         position: fixed;
-        z-index: 2;
+        z-index: 5;
         overflow: hidden;
         transform: translateX(-110%);
         transition: transform 0.2s ease-in;
@@ -589,12 +732,21 @@ main {
         margin-top: 0px;
         list-style: none;
         display: flex;
+        z-index: 4;
         flex-direction: column;
         align-items: flex-start;
         justify-content: space-around;
         height: 30vh;
         margin-top: 50%;
         padding: 0px 20px 0px 40px;
+    }
+    .ov{
+        display: none;
+        background-color: #000000BF;
+        width: 150%;
+        height: 200%;
+        position: fixed;
+        z-index: 2;
     }
     .mobile-ul a {
         color: #1d2025;
@@ -622,13 +774,17 @@ main {
         width: 250px;
         height: 100%;
         background-color: #fff;
+        z-index: 2;
     }
     .mobile-nav-active {
-        transform: translateX(-5%);
+        transform: translateX(-2%);
     }
     .shopping{
         right: 20px;
         top: 75px;
+    }
+    .active{
+        display: inline-block;
     }
 }
 @media screen and (max-width: 400px) {
@@ -640,6 +796,9 @@ main {
     .arrows{
         top: 200px;
     }
+    .mobile-nav-active {
+        transform: translateX(-5%);
+    }
 }
 
 @media screen and (max-width: 340px) {
@@ -648,6 +807,10 @@ main {
     }
     .cart{
         margin: auto 8px;
+    }
+    .shopping{
+        right: 10px;
+        width: 95%;
     }
     
 }
