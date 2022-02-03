@@ -226,7 +226,7 @@ document.onclick = function(e) {
 }
 
 trash.addEventListener('click', () => {
-    if (count > 0){
+    if (numberShop > 0){
         placeholder.classList.add('active-shop');
         shopItems.classList.remove('active-shop');
         cartTotal.classList.remove('active-shop');
