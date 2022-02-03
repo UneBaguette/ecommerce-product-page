@@ -26,12 +26,15 @@ const shopItems = document.querySelector('.shop-items');
 const trash = document.querySelector('.trash');
 // Gallery Image
 const main = document.querySelectorAll('.main-img');
-const thumbnail = document.querySelectorAll('.thumbnail > img');
+const thumbnail = document.querySelectorAll('.bg-t > img');
+const bg = document.querySelectorAll('.bg-t');
 // Lightbox Gallery Image
 const lightbox = document.querySelector('.lightbox');
 const lbimg = document.querySelectorAll('.lb-img');
+const thumbImg = document.querySelectorAll('.bg-t-lb > img');
+const bglb = document.querySelectorAll('.bg-t-lb');
 const exit = document.querySelector('.close-btn');
-// Carousel - Desktop
+// Carousel - Desktop Lightbox
 const suivantDesktop = document.querySelector('.right-lb');
 const precedentDesktop = document.querySelector('.left-lb');
 let count = parseInt(display.innerText);
@@ -39,6 +42,8 @@ let numberShop = parseInt(numItem.innerText);
 let numberCart = parseInt(numCart.innerText);
 let totalShop = parseInt(total.innerText);
 let price = parseInt(priceItem.innerText);
+let indexGallery = 0;
+let num = 0;
 
 // Bouton menu mobile
 // ouverture bouton mobile 
@@ -80,24 +85,113 @@ function checkLB(){
 }
 
 thumbnail.forEach(thumb => {
-    let index = 0;
-    thumb.addEventListener('click', () => {
-        index = thumb.getAttribute('data-ac');
-        for(let i = 0; i < thumbnail.length; i++){
-            if (thumbnail[i].getAttribute('data-ac') === index){
-                thumbnail[i].classList.add('active-1');
-                main[i].classList.add('active');
-                lbimg[i].classList.add('active');
-            }
-            else {
-                thumbnail[i].classList.remove('active-1');
-                main[i].classList.remove('active');
-                lbimg[i].classList.remove('active');
-            }
-        }
-    })
+    thumb.addEventListener('click', gallery);
 })
 
+thumbImg.forEach(thumb => {
+    thumb.addEventListener('click', gallery);
+})
+
+// suivantDesktop.addEventListener('click', gallery);
+// precedentDesktop.addEventListener('click', gallery);
+
+function gallery(){
+    z = this.getAttribute('data-ac');
+    indexGallery = z;
+    for(let i = 0; i < thumbnail.length; i++){
+        if (thumbnail[i].getAttribute('data-ac') === indexGallery){
+            bglb[i].classList.add('active-thumb');
+            lbimg[i].classList.add('active');
+            thumbnail[i].classList.add('active-1');
+            main[i].classList.add('active');
+            bg[i].classList.add('active-thumb');
+            thumbImg[i].classList.add('active-1');
+        }
+        else {
+            bglb[i].classList.remove('active-thumb');
+            lbimg[i].classList.remove('active');
+            thumbnail[i].classList.remove('active-1');
+            main[i].classList.remove('active');
+            bg[i].classList.remove('active-thumb');
+            thumbImg[i].classList.remove('active-1');
+        }
+    }
+}
+
+function arrow(){
+    i = parseInt(indexGallery);
+    if (i < 3 && num === 1){
+        bglb[indexGallery].classList.remove('active-thumb');
+        lbimg[indexGallery].classList.remove('active');
+        thumbnail[indexGallery].classList.remove('active-1');
+        main[indexGallery].classList.remove('active');
+        bg[indexGallery].classList.remove('active-thumb');
+        thumbImg[indexGallery].classList.remove('active-1');
+        indexGallery++;
+        bglb[indexGallery].classList.add('active-thumb');
+        lbimg[indexGallery].classList.add('active');
+        thumbnail[indexGallery].classList.add('active-1');
+        main[indexGallery].classList.add('active');
+        bg[indexGallery].classList.add('active-thumb');
+        thumbImg[indexGallery].classList.add('active-1');
+    }
+    //  retourner au debut du tableau
+    else if(i === 3 && num === 1){
+        bglb[indexGallery].classList.remove('active-thumb');
+        lbimg[indexGallery].classList.remove('active');
+        thumbnail[indexGallery].classList.remove('active-1');
+        main[indexGallery].classList.remove('active');
+        bg[indexGallery].classList.remove('active-thumb');
+        thumbImg[indexGallery].classList.remove('active-1');
+        indexGallery = 0;
+        bglb[indexGallery].classList.add('active-thumb');
+        lbimg[indexGallery].classList.add('active');
+        thumbnail[indexGallery].classList.add('active-1');
+        main[indexGallery].classList.add('active');
+        bg[indexGallery].classList.add('active-thumb');
+        thumbImg[indexGallery].classList.add('active-1');
+    }
+    if (i > 0 && num === 2){
+        bglb[indexGallery].classList.remove('active-thumb');
+        lbimg[indexGallery].classList.remove('active');
+        thumbnail[indexGallery].classList.remove('active-1');
+        main[indexGallery].classList.remove('active');
+        bg[indexGallery].classList.remove('active-thumb');
+        thumbImg[indexGallery].classList.remove('active-1');
+        indexGallery--;
+        bglb[indexGallery].classList.add('active-thumb');
+        lbimg[indexGallery].classList.add('active');
+        thumbnail[indexGallery].classList.add('active-1');
+        main[indexGallery].classList.add('active');
+        bg[indexGallery].classList.add('active-thumb');
+        thumbImg[indexGallery].classList.add('active-1');
+    }
+    else if (i === 0 && num === 2){
+        bglb[indexGallery].classList.remove('active-thumb');
+        lbimg[indexGallery].classList.remove('active');
+        thumbnail[indexGallery].classList.remove('active-1');
+        main[indexGallery].classList.remove('active');
+        bg[indexGallery].classList.remove('active-thumb');
+        thumbImg[indexGallery].classList.remove('active-1');
+        indexGallery = 3;
+        bglb[indexGallery].classList.add('active-thumb');
+        lbimg[indexGallery].classList.add('active');
+        thumbnail[indexGallery].classList.add('active-1');
+        main[indexGallery].classList.add('active');
+        bg[indexGallery].classList.add('active-thumb');
+        thumbImg[indexGallery].classList.add('active-1');
+    }
+}
+
+
+suivantDesktop.addEventListener('click', () => {
+    num = 1;
+    arrow();
+});
+precedentDesktop.addEventListener('click', () => {
+    num = 2;
+    arrow();
+});
 
 
 // Shopping cart - Show/Hide
@@ -180,22 +274,21 @@ buttons.forEach(button => {
 // Carrousel MOBILE
 
 // declaration d'une variable index = 0 pour definir l'emplacement du 1er element dans le tableau
-let index = 0;
 // avancer dans le carrousel
 suivantMobile.addEventListener('click', slideSuivante);
 
 function slideSuivante(){
     // recuperation de la 1ere image
-    if (index < 3){
-        carrouselMobile[index].classList.remove('active');
-        index++;
-        carrouselMobile[index].classList.add('active');
+    if (indexGallery < 3){
+        carrouselMobile[indexGallery].classList.remove('active');
+        indexGallery++;
+        carrouselMobile[indexGallery].classList.add('active');
     }
     //  retourner au debut du tableau
-    else if(index === 3){
-        carrouselMobile[index].classList.remove('active');
-        index = 0;
-        carrouselMobile[index].classList.add('active');
+    else if(indexGallery === 3){
+        carrouselMobile[indexGallery].classList.remove('active');
+        indexGallery = 0;
+        carrouselMobile[indexGallery].classList.add('active');
     }
 }
 // reculer dans le carrousel
@@ -203,15 +296,15 @@ precedentMobile.addEventListener('click',slidePrecedente);
 
 function slidePrecedente(){
     // decrementer pour retourner au 1er element du tableau
-    if (index > 0){
-        carrouselMobile[index].classList.remove('active');
-        index--;
-        carrouselMobile[index].classList.add('active');
+    if (indexGallery > 0){
+        carrouselMobile[indexGallery].classList.remove('active');
+        indexGallery--;
+        carrouselMobile[indexGallery].classList.add('active');
     }
-    else if (index === 0){
-        carrouselMobile[index].classList.remove('active');
-        index = 3;
-        carrouselMobile[index].classList.add('active');
+    else if (indexGallery === 0){
+        carrouselMobile[indexGallery].classList.remove('active');
+        indexGallery = 3;
+        carrouselMobile[indexGallery].classList.add('active');
     }
 }
 // fin partie CARROUSEL MOBILE

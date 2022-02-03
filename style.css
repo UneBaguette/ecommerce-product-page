@@ -89,11 +89,11 @@ ul li a:hover{
     left: 10px;
     bottom: 13px;
     border-radius: 10px;
-    width: 25px;
+    width: 20px;
 }
 
 .cart-number span{
-    margin: auto 10px;
+    margin: auto 5px;
     font-size: 10px;
     font-weight: 700;
     color: #fff;
@@ -281,9 +281,8 @@ main {
     display: none;
 }
 
-.gallery img {
+.desktop img{
     border-radius: 10px;
-    margin: 10px;
 }
 
 .main-img {
@@ -310,12 +309,14 @@ main {
 }
 
 .lb-img{
+    user-select: none;
     display: none;
     width: 450px;
     position: relative;
 }
 
 .gallery-lb{
+    user-select: none;
     position: relative;
     display: flex;
     justify-content: center;
@@ -370,13 +371,13 @@ main {
 }
 
 .close-btn{
+    margin: 15px auto;
     justify-content: end;
     display: flex;
-    width: 460px;
+    width: 445px;
     z-index: 10;
     user-select: none;
     top:25px;
-    right: 300px;
     filter:brightness(300%);
 }
 
@@ -390,6 +391,8 @@ main {
 }
 
 .thumbnail-lb {
+    height: 130px;
+    width: 400px;
     position: relative;
     display: flex;
     justify-content: space-between;
@@ -397,13 +400,15 @@ main {
 }
 
 .thumbnail-lb img{
+    user-select: none;
+    border-radius: 0px;
     position: relative;
     cursor: pointer;
-    width: 70px;
+    width: 100%;
 }
 
 .thumbnail-lb img:hover{
-    opacity: 60%;
+    opacity: 50%;
     filter: hue-rotate(3deg) brightness(110%);
 }
 
@@ -415,11 +420,11 @@ main {
 
 .thumbnail img {
     cursor: pointer;
-    width: 80px;
+    width: 100%;
 }
 
 .thumbnail img:hover{
-    opacity: 60%;
+    opacity: 50%;
 }
 
 .active-cart{
@@ -428,6 +433,27 @@ main {
 
 .active-1{
     opacity: 30%;
+}
+
+.bg-t{
+    margin: 10px 0px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.bg-t-lb{
+    margin: 10px 0px;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.active-thumb{
     border: 2px solid #ff7d1a;
 }
 
