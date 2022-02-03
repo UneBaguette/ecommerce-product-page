@@ -1,5 +1,11 @@
 ### Projet de groupe consistant à reproduire un site de E-commerce.
 
+#
+
+Accéder au site en cliquant [ICI](https://www.example.com).
+
+#
+
 ## Thomas
 <p> Ma tâche était de m'occuper dans la partie Desktop de :
   

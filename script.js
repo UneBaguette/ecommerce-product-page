@@ -100,6 +100,7 @@ function gallery(){
     indexGallery = z;
     for(let i = 0; i < thumbnail.length; i++){
         if (thumbnail[i].getAttribute('data-ac') === indexGallery){
+            carrouselMobile[i].classList.add('active');
             bglb[i].classList.add('active-thumb');
             lbimg[i].classList.add('active');
             thumbnail[i].classList.add('active-1');
@@ -108,6 +109,7 @@ function gallery(){
             thumbImg[i].classList.add('active-1');
         }
         else {
+            carrouselMobile[i].classList.remove('active');
             bglb[i].classList.remove('active-thumb');
             lbimg[i].classList.remove('active');
             thumbnail[i].classList.remove('active-1');
@@ -127,6 +129,7 @@ function arrow(){
         main[indexGallery].classList.remove('active');
         bg[indexGallery].classList.remove('active-thumb');
         thumbImg[indexGallery].classList.remove('active-1');
+        carrouselMobile[indexGallery].classList.remove('active');
         indexGallery++;
         bglb[indexGallery].classList.add('active-thumb');
         lbimg[indexGallery].classList.add('active');
@@ -134,6 +137,7 @@ function arrow(){
         main[indexGallery].classList.add('active');
         bg[indexGallery].classList.add('active-thumb');
         thumbImg[indexGallery].classList.add('active-1');
+        carrouselMobile[indexGallery].classList.add('active');
     }
     //  retourner au debut du tableau
     else if(i === 3 && num === 1){
@@ -143,6 +147,7 @@ function arrow(){
         main[indexGallery].classList.remove('active');
         bg[indexGallery].classList.remove('active-thumb');
         thumbImg[indexGallery].classList.remove('active-1');
+        carrouselMobile[indexGallery].classList.remove('active');
         indexGallery = 0;
         bglb[indexGallery].classList.add('active-thumb');
         lbimg[indexGallery].classList.add('active');
@@ -150,14 +155,16 @@ function arrow(){
         main[indexGallery].classList.add('active');
         bg[indexGallery].classList.add('active-thumb');
         thumbImg[indexGallery].classList.add('active-1');
+        carrouselMobile[indexGallery].classList.add('active');
     }
-    if (i > 0 && num === 2){
+    else if (i > 0 && num === 2){
         bglb[indexGallery].classList.remove('active-thumb');
         lbimg[indexGallery].classList.remove('active');
         thumbnail[indexGallery].classList.remove('active-1');
         main[indexGallery].classList.remove('active');
         bg[indexGallery].classList.remove('active-thumb');
         thumbImg[indexGallery].classList.remove('active-1');
+        carrouselMobile[indexGallery].classList.remove('active');
         indexGallery--;
         bglb[indexGallery].classList.add('active-thumb');
         lbimg[indexGallery].classList.add('active');
@@ -165,6 +172,7 @@ function arrow(){
         main[indexGallery].classList.add('active');
         bg[indexGallery].classList.add('active-thumb');
         thumbImg[indexGallery].classList.add('active-1');
+        carrouselMobile[indexGallery].classList.add('active');
     }
     else if (i === 0 && num === 2){
         bglb[indexGallery].classList.remove('active-thumb');
@@ -173,6 +181,7 @@ function arrow(){
         main[indexGallery].classList.remove('active');
         bg[indexGallery].classList.remove('active-thumb');
         thumbImg[indexGallery].classList.remove('active-1');
+        carrouselMobile[indexGallery].classList.remove('active');
         indexGallery = 3;
         bglb[indexGallery].classList.add('active-thumb');
         lbimg[indexGallery].classList.add('active');
@@ -180,6 +189,7 @@ function arrow(){
         main[indexGallery].classList.add('active');
         bg[indexGallery].classList.add('active-thumb');
         thumbImg[indexGallery].classList.add('active-1');
+        carrouselMobile[indexGallery].classList.add('active');
     }
 }
 
@@ -269,49 +279,14 @@ buttons.forEach(button => {
     });
 })
 
+// Carousel - Mobile
 
+suivantMobile.addEventListener('click', () => {
+    num = 1;
+    arrow();
+});
 
-// Carrousel MOBILE
-
-// declaration d'une variable index = 0 pour definir l'emplacement du 1er element dans le tableau
-// avancer dans le carrousel
-suivantMobile.addEventListener('click', slideSuivante);
-
-function slideSuivante(){
-    // recuperation de la 1ere image
-    if (indexGallery < 3){
-        carrouselMobile[indexGallery].classList.remove('active');
-        indexGallery++;
-        carrouselMobile[indexGallery].classList.add('active');
-    }
-    //  retourner au debut du tableau
-    else if(indexGallery === 3){
-        carrouselMobile[indexGallery].classList.remove('active');
-        indexGallery = 0;
-        carrouselMobile[indexGallery].classList.add('active');
-    }
-}
-// reculer dans le carrousel
-precedentMobile.addEventListener('click',slidePrecedente);
-
-function slidePrecedente(){
-    // decrementer pour retourner au 1er element du tableau
-    if (indexGallery > 0){
-        carrouselMobile[indexGallery].classList.remove('active');
-        indexGallery--;
-        carrouselMobile[indexGallery].classList.add('active');
-    }
-    else if (indexGallery === 0){
-        carrouselMobile[indexGallery].classList.remove('active');
-        indexGallery = 3;
-        carrouselMobile[indexGallery].classList.add('active');
-    }
-}
-// fin partie CARROUSEL MOBILE
-
-// Carrousel DESKTOP
-
-// let index = 0;
-// suivantDesktop('click', slideSuivante);
-
-// function slideSuivante(){}
+precedentMobile.addEventListener('click', () => {
+    num = 2;
+    arrow();
+});
