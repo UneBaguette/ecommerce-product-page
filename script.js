@@ -1,23 +1,46 @@
 // déclaration variables et constantes
+// Carousel - Mobile
 const carrouselMobile = document.querySelectorAll('.mobile img');
 const suivantMobile = document.querySelector('.right');
 const precedentMobile = document.querySelector('.left');
+// Menu - Mobile
 const mobileNav = document.querySelector(".mobile-nav");
 const burger = document.querySelector(".btn-burger");
 const burger2 = document.querySelector(".btn-burger2");
 const overlay = document.querySelector('.ov');
-const contactBtn = document.querySelector(".btn");
-const cart = document.querySelector('.cart');
+// Shop - Add to cart
+const buy = document.querySelector('.add-cart');
+// Number of Items
 const buttons = document.querySelectorAll('.number > img');
 const display = document.querySelector('.number > span');
+// Shop - Shopping Cart
+const cart = document.querySelector('.cart-logo');
 const shop = document.querySelector('.shopping');
+const priceItem = document.querySelector('.price-item > p')
+const numItem = document.querySelector('.num-item > span');
+const total = document.querySelector('.total > p');
+const cartTotal = document.querySelector('.cart-number')
+const numCart = document.querySelector('.cart-number span');
+const placeholder = document.querySelector('.placeholder');
+const shopItems = document.querySelector('.shop-items');
+// Gallery Image
 const main = document.querySelectorAll('.main-img');
 const thumbnail = document.querySelectorAll('.thumbnail > img');
+// Lightbox Gallery Image
 const lightbox = document.querySelector('.lightbox');
 const lbimg = document.querySelectorAll('.lb-img');
 const exit = document.querySelector('.close-btn');
+// Carousel - Desktop
 const suivantDesktop = document.querySelector('.right-lb');
 const precedentDesktop = document.querySelector('.left-lb');
+let count = parseInt(display.innerText);
+let numberShop = parseInt(numItem.innerText);
+let numberCart = parseInt(numCart.innerText);
+let totalShop = parseInt(total.innerText);
+let price = parseInt(priceItem.innerText);
+price = 125;
+
+console.log(priceItem)
 
 // Bouton menu mobile
 // ouverture bouton mobile 
@@ -61,7 +84,6 @@ function checkLB(){
 thumbnail.forEach(thumb => {
     let index = 0;
     thumb.addEventListener('click', () => {
-        console.log(lbimg)
         index = thumb.getAttribute('data-ac');
         for(let i = 0; i < thumbnail.length; i++){
             if (thumbnail[i].getAttribute('data-ac') === index){
@@ -92,13 +114,41 @@ cart.addEventListener('click', () => {
     }
 });
 
+document.onclick = function(e) {
+    if(!shopping.contains(e.target) && !cart.contains(e.target)) {
+        cart.classList.remove('active-cart');
+        shop.classList.remove('active');
+    } else {
+        return;
+    }
+}
+
+
+// Add to cart
+
+buy.addEventListener('click', () => {
+    if (count > 0 && numberShop < 99) {
+        numberShop += count;
+        totalShop += price * count;
+        placeholder.classList.remove('active-shop');
+        shopItems.classList.add('active-shop');
+        cartTotal.classList.add('active-shop');
+    }
+    else {
+        numCart.classList.remove('active');
+        return;
+    }
+    numItem.innerText = numberShop;
+    numCart.innerText = numberShop;
+    priceItem.innerText = `$${price}.00 x`;
+    total.innerText = `$${totalShop}.00`;
+})
 
 // Add or remove item - Limits to 99
 
 buttons.forEach(button => {
     display.innerText = '0';
     button.addEventListener('click', () => {
-        let count = parseInt(display.innerText);
         op = button.getAttribute('data-op');
         if (op === '+') {
             count += 1;
@@ -111,6 +161,8 @@ buttons.forEach(button => {
         display.innerText = count;
     });
 })
+
+
 
 // Carrousel MOBILE
 

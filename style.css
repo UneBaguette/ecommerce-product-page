@@ -82,16 +82,20 @@ ul li a:hover{
 
 .cart-number {
     display: none;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     background-color: #ff7d1a;
     left: 10px;
     bottom: 13px;
     border-radius: 10px;
-    padding: 0px 7px;
+    width: 25px;
 }
 
 .cart-number span{
+    margin: auto 10px;
     font-size: 10px;
+    font-weight: 700;
     color: #fff;
 }
 
@@ -155,7 +159,7 @@ main {
 }
 
 .placeholder{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     height: 170px;
@@ -418,13 +422,17 @@ main {
     opacity: 60%;
 }
 
+.active-cart{
+    filter: brightness(30%);
+}
+
 .active-1{
     opacity: 30%;
     border: 2px solid #ff7d1a;
 }
 
-.active-cart{
-    filter: brightness(30%);
+.active-shop{
+    display: flex;
 }
 
 .active-lb {
