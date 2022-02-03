@@ -23,6 +23,7 @@ const cartTotal = document.querySelector('.cart-number')
 const numCart = document.querySelector('.cart-number span');
 const placeholder = document.querySelector('.placeholder');
 const shopItems = document.querySelector('.shop-items');
+const trash = document.querySelector('.trash');
 // Gallery Image
 const main = document.querySelectorAll('.main-img');
 const thumbnail = document.querySelectorAll('.thumbnail > img');
@@ -38,9 +39,6 @@ let numberShop = parseInt(numItem.innerText);
 let numberCart = parseInt(numCart.innerText);
 let totalShop = parseInt(total.innerText);
 let price = parseInt(priceItem.innerText);
-price = 125;
-
-console.log(priceItem)
 
 // Bouton menu mobile
 // ouverture bouton mobile 
@@ -123,10 +121,22 @@ document.onclick = function(e) {
     }
 }
 
+trash.addEventListener('click', () => {
+    if (count > 0){
+        placeholder.classList.add('active-shop');
+        shopItems.classList.remove('active-shop');
+        cartTotal.classList.remove('active-shop');
+        console.log(count)
+        price = 0;
+        numberShop = 0;
+        totalShop = 0;
+    }
+})
 
 // Add to cart
 
 buy.addEventListener('click', () => {
+    price = 125;
     if (count > 0 && numberShop < 99) {
         numberShop += count;
         totalShop += price * count;
@@ -148,7 +158,7 @@ buy.addEventListener('click', () => {
 // Add or remove item - Limits to 99
 
 buttons.forEach(button => {
-    display.innerText = '0';
+    display.innerText = count;
     button.addEventListener('click', () => {
         op = button.getAttribute('data-op');
         if (op === '+') {

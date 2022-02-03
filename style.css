@@ -820,5 +820,27 @@ main {
         right: 10px;
         width: 95%;
     }
+    .shop-item {
+        width: 160px;
+    }
+    
+}
+@media screen and (max-width: 280px) {
+    .btn-burger {
+        padding: 0px 10px 0px 20px;
+    }
+    .cart{
+        margin: auto 8px;
+    }
+    .shopping{
+        right: 10px;
+        width: 95%;
+    }
+    .shop-item {
+        width: 140px;
+    }
+    .offer{
+        padding: 5px 1px;
+    }
     
 }
