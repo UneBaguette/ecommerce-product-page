@@ -126,7 +126,6 @@ trash.addEventListener('click', () => {
         placeholder.classList.add('active-shop');
         shopItems.classList.remove('active-shop');
         cartTotal.classList.remove('active-shop');
-        console.log(count)
         price = 0;
         numberShop = 0;
         totalShop = 0;
