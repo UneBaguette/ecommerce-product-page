@@ -138,8 +138,11 @@ buy.addEventListener('click', () => {
     price = 125;
     if (count > 0 && numberShop < 99) {
         numberShop += count;
-        totalShop += price * count;
-        numberShop = numberShop > 99 ? 99 : numberShop;
+        totalShop = price * numberShop;
+        if (numberShop >= 99) {
+            numberShop = 99;
+            totalShop = price * numberShop;
+        }
         placeholder.classList.remove('active-shop');
         shopItems.classList.add('active-shop');
         cartTotal.classList.add('active-shop');
