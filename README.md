@@ -2,7 +2,7 @@
 
 #
 
-Accéder au site en cliquant [ICI](https://www.example.com).
+Accéder au site en cliquant [ICI](https://unebaguette.github.io/ecommerce-product-page/).
 
 #
 
