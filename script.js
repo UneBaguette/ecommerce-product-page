@@ -130,6 +130,7 @@ buy.addEventListener('click', () => {
     if (count > 0 && numberShop < 99) {
         numberShop += count;
         totalShop += price * count;
+        numberShop = numberShop > 99 ? 99 : numberShop;
         placeholder.classList.remove('active-shop');
         shopItems.classList.add('active-shop');
         cartTotal.classList.add('active-shop');
